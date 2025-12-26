@@ -84,9 +84,9 @@ internal class Inventory
 			var findedItems = new List<Item>();
 			foreach (var item in _items)
 			{
-				if (item.Name.Contains(name))
+				if (item.Name.Contains(name, StringComparison.InvariantCultureIgnoreCase))
 				{
-					findedItems.Add(item);
+					findedItems.Add(new Item(item));
 				}
 			}
 			return findedItems.AsReadOnly();
